@@ -43,6 +43,17 @@ int main(void)
 		head = LLN_NEXT(head);
 	}
 
+
+	Object *first;
+	int status;
+
+	status = LinkedList_ELEMENT_AT(&ll, 0, (void **)&first);
+	
+	if(status == LinkedList_SUCCESS) 
+	{
+		OBJECT_DUMP(first);
+	}
+	
 	LinkedList_TERM(&ll);
 
 	return 0;

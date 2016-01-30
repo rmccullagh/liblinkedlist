@@ -44,5 +44,7 @@ typedef struct LinkedList {
 int LinkedList_INIT(LinkedList *, LinkedListValueDestructor);
 int LinkedList_ADD(LinkedList *, Object *);
 int LinkedList_TERM(LinkedList *);
+int LinkedList_ELEMENT_AT(LinkedList *, size_t, void **);
+
 
 #endif

@@ -85,3 +85,24 @@ int LinkedList_TERM(LinkedList *ll)
 
 	return LinkedList_SUCCESS;
 }
+
+int LinkedList_ELEMENT_AT(LinkedList *ll, size_t index, void **out)
+{
+	int returnValue = LinkedList_FAILURE;
+	size_t position = 0;
+
+	LinkedListNode *head = LL_CHAIN(ll);
+
+	while(head != NULL) {
+		
+		if(position == index) {
+			*out = LLN_VALUE(head);
+			returnValue = LinkedList_SUCCESS;
+			break;
+		}
+
+		position++;
+	}
+
+	return LinkedList_SUCCESS;
+}
