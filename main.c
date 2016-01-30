@@ -33,6 +33,8 @@ int main(void)
 	LinkedList_ADD(&ll, newString("Ryan"));
 
 	LinkedListNode *head = LL_CHAIN(&ll);
+	
+	fprintf(stdout, "Node Count: %zu\n", LL_COUNT(&ll));
 
 	while(head != NULL) 
 	{
