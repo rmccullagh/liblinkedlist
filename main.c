@@ -47,7 +47,7 @@ int main(void)
 	Object *first;
 	int status;
 
-	status = LinkedList_ELEMENT_AT(&ll, 0, (void **)&first);
+	status = LinkedList_ELEMENT_AT(&ll, -1, (void **)&first);
 	
 	if(status == LinkedList_SUCCESS) 
 	{

@@ -95,14 +95,17 @@ int LinkedList_ELEMENT_AT(LinkedList *ll, size_t index, void **out)
 
 	while(head != NULL) {
 		
-		if(position == index) {
+		if(position == index) 
+		{
 			*out = LLN_VALUE(head);
 			returnValue = LinkedList_SUCCESS;
 			break;
 		}
 
+		head = LLN_NEXT(head);
+
 		position++;
 	}
 
-	return LinkedList_SUCCESS;
+	return returnValue;
 }
