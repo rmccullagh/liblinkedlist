@@ -41,5 +41,7 @@ int main(void)
 		head = LLN_NEXT(head);
 	}
 
+	LinkedList_TERM(&ll);
+
 	return 0;
 }

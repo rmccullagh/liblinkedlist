@@ -42,7 +42,8 @@ int LinkedList_ADD(LinkedList *ll, Object *value)
 
 		LLN_VALUE(LL_CHAIN(ll)) = value;
 		LLN_NEXT(LL_CHAIN(ll)) = NULL;
-	} 
+		LL_COUNT(ll)++;
+	}
 
 	else 
 	{
@@ -58,12 +59,29 @@ int LinkedList_ADD(LinkedList *ll, Object *value)
 
 		LLN_VALUE(next) = value;
 		LLN_NEXT(next) = prev;
-
 		LL_CHAIN(ll) = next;
+		LL_COUNT(ll)++;
 	}
 
 	finish:
 		return returnValue;
 }
 
-	
+int LinkedList_TERM(LinkedList *ll)
+{
+	LinkedListNode *head = LL_CHAIN(ll);
+
+	while(head != NULL) 
+	{
+		LinkedListNode *next = LLN_NEXT(head);
+
+		LL_DTOR(ll)(LLN_VALUE(head));
+
+		free(head);
+
+		head = next;
+	}
+
+
+	return LinkedList_SUCCESS;
+}

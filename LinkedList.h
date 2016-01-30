@@ -43,5 +43,6 @@ typedef struct LinkedList {
 
 int LinkedList_INIT(LinkedList *, LinkedListValueDestructor);
 int LinkedList_ADD(LinkedList *, Object *);
+int LinkedList_TERM(LinkedList *);
 
 #endif
