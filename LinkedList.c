@@ -26,7 +26,7 @@ int LinkedList_INIT(LinkedList *ll, LinkedListValueDestructor dtor)
 	return LinkedList_SUCCESS;
 }
 
-int LinkedList_ADD(LinkedList *ll, Object *value)
+int LinkedList_ADD(LinkedList *ll, void *value)
 {
 	int returnValue = LinkedList_SUCCESS;
 

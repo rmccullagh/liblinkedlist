@@ -21,7 +21,7 @@
 typedef void(*LinkedListValueDestructor)(void *value);
 
 typedef struct LinkedListNode {
-	Object 		  *lln_value;
+	void 		      *lln_value;
 	struct LinkedListNode *lln_next;
 } LinkedListNode;
 
@@ -42,7 +42,7 @@ typedef struct LinkedList {
 #define LinkedList_SUCCESS (0)
 
 int LinkedList_INIT(LinkedList *, LinkedListValueDestructor);
-int LinkedList_ADD(LinkedList *, Object *);
+int LinkedList_ADD(LinkedList *, void*);
 int LinkedList_TERM(LinkedList *);
 int LinkedList_ELEMENT_AT(LinkedList *, size_t, void **);
 
