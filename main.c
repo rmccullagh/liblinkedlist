@@ -24,6 +24,11 @@ static void dtor(void *value)
 	objectDestroy((Object *)value);
 }
 
+int callback(void *left, void *right)
+{
+	return objectValueCompare((Object *)left, (Object *)right);
+}
+
 int main(void)
 {
 	LinkedList ll;
@@ -53,6 +58,21 @@ int main(void)
 	{
 		OBJECT_DUMP(first);
 	}
+
+
+	
+	Object* valueToBeSearchedFor = newString("Ryan");
+	Object* out;		
+
+	status = LinkedList_SEARCH(&ll, (void **)&out, (void *)valueToBeSearchedFor, callback);
+
+	if(status == LinkedList_SUCCESS) 
+	{
+		OBJECT_DUMP(out);
+	}
+	
+	objectDestroy(valueToBeSearchedFor);
+
 
 	LinkedList_TERM(&ll);
 

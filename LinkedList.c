@@ -113,3 +113,23 @@ int LinkedList_ELEMENT_AT(LinkedList *ll, size_t index, void **out)
 	return returnValue;
 }
 
+int LinkedList_SEARCH(LinkedList *ll, void **out, void *valueToBeSearchedFor, int(*callback)(void *, void *))
+{
+	int returnValue = LinkedList_FAILURE;
+	*out = NULL;
+
+	LinkedListNode *head = LL_CHAIN(ll);
+
+	while(head != NULL) 
+	{	
+		if(callback(valueToBeSearchedFor, LLN_VALUE(head)))
+		{
+			*out = LLN_VALUE(head);
+			returnValue = LinkedList_SUCCESS;
+			break;
+		}
+
+		head = LLN_NEXT(head);
+	}
+	return returnValue;
+}
