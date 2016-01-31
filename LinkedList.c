@@ -91,10 +91,13 @@ int LinkedList_ELEMENT_AT(LinkedList *ll, size_t index, void **out)
 	int returnValue = LinkedList_FAILURE;
 	size_t position = 0;
 
+	*out = NULL;
+
 	LinkedListNode *head = LL_CHAIN(ll);
 
-	while(head != NULL) {
-		
+
+	while(head != NULL) 
+	{	
 		if(position == index) 
 		{
 			*out = LLN_VALUE(head);
@@ -109,3 +112,4 @@ int LinkedList_ELEMENT_AT(LinkedList *ll, size_t index, void **out)
 
 	return returnValue;
 }
+
