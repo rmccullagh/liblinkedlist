@@ -12,7 +12,6 @@
  * GNU General Public License for more details.
  */
 
-#include <object.h>
 #include <stdlib.h>
 
 #include "LinkedList.h"
