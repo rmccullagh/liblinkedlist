@@ -34,8 +34,8 @@ int main(void)
 	LinkedList ll;
 	LinkedList_INIT(&ll, dtor);
 
-	LinkedList_ADD(&ll, newString("McCullagh"));
-	LinkedList_ADD(&ll, newString("Ryan"));
+	LinkedList_ADD(&ll, newString("String"));
+	LinkedList_ADD(&ll, newString("Object"));
 
 	LinkedListNode *head = LL_CHAIN(&ll);
 	

@@ -131,5 +131,6 @@ int LinkedList_SEARCH(LinkedList *ll, void **out, void *valueToBeSearchedFor, in
 
 		head = LLN_NEXT(head);
 	}
+
 	return returnValue;
 }
