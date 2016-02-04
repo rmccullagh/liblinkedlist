@@ -39,7 +39,7 @@ int main(void)
 
 	LinkedListNode *head = LL_CHAIN(&ll);
 	
-	fprintf(stdout, "Node Count: %zu\n", LL_COUNT(&ll));
+	fprintf(stdout, "Node Count: %zu\n", LinkedList_COUNT(&ll));
 
 	while(head != NULL) 
 	{
