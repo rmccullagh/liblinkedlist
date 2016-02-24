@@ -1,0 +1,20 @@
+2/9/2016
+
+https://www.gnu.org/software/libtool/manual/html_node/Libtool-versioning.html
+
+libtool version
+
+current
+The most recent interface number that this library implements.
+
+revision
+The implementation number of the current interface.
+
+age
+The difference between the newest and oldest interfaces that this library implements. 
+In other words, the library implements all the interface numbers in the range from number 
+current - age to current.
+
+If two libraries have identical current and age numbers, then the dynamic linker chooses 
+the library with the greater revision number.
+
